@@ -234,7 +234,7 @@ public class LinkedList implements List {
         list.addLast(8);
         list.print();
         list.reverse();
-        System.out.println();
+        System.out.println("\nPrinting reverse list");
         list.print();
     }
 }
