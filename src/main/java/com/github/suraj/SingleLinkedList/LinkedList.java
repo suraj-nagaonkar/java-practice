@@ -1,4 +1,4 @@
-package com.github.suraj.LinkedList;
+package com.github.suraj.SingleLinkedList;
 
 
 /**
@@ -212,6 +212,25 @@ public class LinkedList implements List {
             if (clone == null) {
                 clone = current;
                 current.setNext(null);
+            }
+            else {
+                current.setNext(clone);
+                clone = current;
+            }
+            current = temp;
+        }
+        head = clone;
+    }
+
+    public void reverse1(){
+        Node current = head;
+        Node temp = head;
+        Node clone = null;
+        while (current != null) {
+            temp = current.getNext();
+            if (clone == null) {
+                clone = current;
+                head = head.getNext();
             }
             else {
                 current.setNext(clone);

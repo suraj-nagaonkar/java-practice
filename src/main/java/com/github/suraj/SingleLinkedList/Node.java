@@ -1,4 +1,4 @@
-package com.github.suraj.LinkedList;
+package com.github.suraj.SingleLinkedList;
 
 /**
  * @author 10-02-2022
