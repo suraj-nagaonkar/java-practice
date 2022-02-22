@@ -56,6 +56,7 @@ public class Binarytree {
     public static void levelOrder(Node root){
         Queue<Node> q = new LinkedList<>();
         q.add(root);
+        q.add(null);
 
         while(!q.isEmpty()){
             Node currentnode = q.remove();
