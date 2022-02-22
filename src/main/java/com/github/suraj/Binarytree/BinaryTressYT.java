@@ -1,4 +1,4 @@
-package com.github.suraj.Binarypreordertree;
+package com.github.suraj.Binarytree;
 
 /**
  * @author 18-02-2022
