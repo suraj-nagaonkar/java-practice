@@ -1,5 +1,6 @@
 package com.github.suraj.Binarytree1;
 
+import java.util.*;
 import java.util.List;
 
 /**
@@ -52,6 +53,34 @@ public class Binarytree {
         System.out.print(root.getElement()+" ");
     }
 
+    public static void levelOrder(Node root){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()){
+            Node currentnode = q.remove();
+
+            if (currentnode == null){
+                System.out.println();
+                if (q.isEmpty()){
+                    break;
+                }
+                else{
+                    q.add(null);
+                }
+            }
+            else {
+                System.out.print(currentnode.getElement()+" ");
+                if (currentnode.getLeft() != null){
+                    q.add(currentnode.getLeft());
+                }
+                if (currentnode.getRight() != null){
+                    q.add(currentnode.getRight());
+                }
+            }
+        }
+    }
+
     public static void main(String args[]){
         Binarytree tree = new Binarytree();
         Node root = tree.createTree(10);
@@ -63,5 +92,7 @@ public class Binarytree {
         System.out.println();
         System.out.print("Postorder : ");
         postorder(root);
+        System.out.println();
+        levelOrder(root);
     }
 }
