@@ -57,7 +57,7 @@ public class Binarytree {
         if (root == null){
             return;
         }
-        
+
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         q.add(null);
@@ -90,6 +90,28 @@ public class Binarytree {
         }
     }
 
+    public static void search(Node root, int key) {
+        if (root == null) {
+            System.out.print("Tree is empty");
+        }
+
+        Node current = root;
+
+        while (current != null) {
+            if (key == current.getElement()) {
+                System.out.println("Element exists in the tree");
+            }
+
+            else if (key < current.getElement()) {
+                current = current.getLeft();
+            }
+
+            else {
+                current = current.getRight();
+            }
+        }
+    }
+
     public static void main(String args[]){
         Binarytree tree = new Binarytree();
         Node root = tree.createTree(10);
@@ -103,5 +125,7 @@ public class Binarytree {
         postorder(root);
         System.out.println();
         levelOrder(root);
+        System.out.println();
+        search(root, 20);
     }
 }
