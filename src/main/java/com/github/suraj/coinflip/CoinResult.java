@@ -1,5 +1,5 @@
-package com.github.suraj.miniproject1;
-import java.util.Random;
+package com.github.suraj.coinflip;
+
 /**
  * @author 14-03-2022
  */
@@ -10,7 +10,7 @@ public class CoinResult {
         Thread T1 = new Thread();
         for (int i = 0; i <= 10; i++) {
             try {
-                T1.sleep(200);
+                T1.sleep(400);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
@@ -22,7 +22,7 @@ public class CoinResult {
         int min = 1;
         int range = max - min + 1;
         int rand = (int) (Math.random() * range) + min;
-        System.out.println(rand);
+
 
         if (rand == 1) {
             String c = "Head";

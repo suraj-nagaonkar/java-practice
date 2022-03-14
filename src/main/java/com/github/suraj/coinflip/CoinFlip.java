@@ -1,4 +1,4 @@
-package com.github.suraj.miniproject1;
+package com.github.suraj.coinflip;
 import java.util.*;
 
 /**

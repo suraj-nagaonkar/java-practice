@@ -1,4 +1,4 @@
-package com.github.suraj.miniproject2;
+package com.github.suraj.snakeladder;
 
 
 /**
