@@ -1,209 +1,39 @@
 package com.github.suraj.snakeladder;
 
-
 /**
- * @author 09-03-2022
+ * @author 14-03-2022
  */
 
 public class SnakeLadder {
 
-    static int box1 = 0;
-
-    public static int diceFunction1(int c) {
-        for (int i = 1; i<=c; i++){
-            box1++;
+    public int snakeLadder(int value, String player, int count){
+        System.out.println("Moving "+player+" by "+value+" position forward");
+        for(int i=1; i<=value; i++){
+            count++;
         }
-        return box1;
-    }
+         if (count == 10){
+             System.out.println("Oop's "+player+" you are in house no. 10 and you are caught by a snake taking you back to the house no.1");
+             count = 1;
+         }
 
-    public static void main(String [] args){
+         else if(count == 14){
+             System.out.println("Oop's "+player+" you are in house no. 14 and you are caught by the snake taking you back to the house no.4");
+             count = 4;
+         }
 
-        while (box1 < 15){
-            System.out.println("Dice is rolling");
-            for(int i = 1; i<=10; i++){
-                System.out.print(".");
-            }
+         else if(count == 2){
+             System.out.println("Hey "+ player+" congrats you are at the base of a ladder taking you directly to the box no. 6");
+             count = 6;
+         }
 
-            int b = (int) (Math.random()*10);
-            System.out.println("Random no." +" "+ b);
-            System.out.println("House no."+ " " +box1);
-            if (b == 0) {
-                int c = 1;
-                diceFunction1(c);
+         else if(count == 9){
+             System.out.println("Hey "+player+" congrats you are at the base of a ladder taking you directly to the box no. 13");
+             count = 13;
+         }
 
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking you to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-
-            else if (b > 0 && b < 3) {
-                int c = 2;
-                diceFunction1(c);
-
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-
-            else if (b > 2 && b < 5) {
-                int c = 3;
-                diceFunction1(c);
-
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-
-            else if (b > 4 && b < 7) {
-                int c = 4;
-                diceFunction1(c);
-
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-
-            else if (b > 6 && b < 9) {
-                int c = 5;
-                diceFunction1(c);
-
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-
-            else if (b == 9) {
-                int c = 6;
-                diceFunction1(c);
-
-                if (box1 == 10){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 1");
-                    box1 = 1;
-                }
-
-                else if(box1 == 14){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Oops you are in the mouth of a snake taking to to house no. 4");
-                    box1 = 4;
-                }
-
-                else if(box1 == 2){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 6");
-                    box1 = 6;
-                }
-
-                else if (box1 == 9){
-                    System.out.println("House no." + " " + box1);
-                    System.out.println("Congratulations you are at the step of a ladder taking you to box no. 13");
-                    box1 = 13;
-                }
-            }
-        }
-
-                System.out.println("House no." + " " + box1);
-                System.out.println("Game over");
+         else if(count >= 15){
+             return count;
+         }
+         return count;
     }
 }
-
